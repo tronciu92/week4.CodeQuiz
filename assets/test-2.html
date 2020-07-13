@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    <title>Coding Quiz</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                View High Score
+            </div>
+            <div id="game-clock-container" class="col-12 col-md-6 text-md-right">
+                Time: <span id="game-clock">XX</span>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <main class="col-8">
+                <h1 id="heading1">Coding Quiz Challenge</h1>
+                <div id="start-menu">
+                    <p>Test your knowledge of Javascript by answering a series of questions.</p>
+
+                    <button onclick="startQuiz()" class="btn btn-primary">Start the quiz</button>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script type="text/javascript" src="assets/questions.js"></script>
+    <script>
+        // The user score stored in a variable
+        var userScore = "0";
+        
+        // The starting paragraph and button that greets user on default
+        var startMenu = document.getElementById('start-menu');
+
+        // The main h1 tag on the page
+        var questionHeading = document.getElementById('heading1');
+
+        // The timer that the user sees
+        var gameClock = document.getElementById('game-clock');
+
+        // The number of questions and setting the 
+        // countdown timer based on this number
+        var numberOfQuestions = questions.length;
+
+        // 15 seconds for each question to determine total game time
+        var gameTimer = numberOfQuestions * 15;
+        // console.log(gameTimer);
+
+        // The timer that counts down when the game is started
+        function countdownClock() {
+            var timerInterval = setInterval(function() {
+                gameClock.textContent = gameTimer;
+                gameTimer--
+
+                // Once the timer hits zero, game is ended
+                if(gameTimer === 0) {
+                    clearInterval(timerInterval);
+                }
+
+            }, 1000);
+        } 
+
+        function startQuiz() {
+            countdownClock();
+            startMenu.setAttribute("style", "display: none;")
+
+            for (var i = 0; i <= numberOfQuestions - 1; i++) {
+                questions[i].forEach(listChoices);
+            }
+        }
+
+        function listChoices() {
+            var answerBtn = document.createElement("button");
+            answerBtn.innerHTML = questions[0].choices[0]
+            document.querySelector("main").appendChild(answerBtn);
+
+            question
+        }
+
+    </script>
+</body>
+</html>

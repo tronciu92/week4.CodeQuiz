@@ -1,6 +1,6 @@
 # Code Quiz
 
-This is a quiz game about Javascript featuring ten questions. Link to project: <a href="" target="_blank">Click here</a>
+This is a quiz game about Javascript featuring ten questions. Link to project: <a href="https://tronciu92.github.io/week4.CodeQuiz/." target="_blank">Click here</a>
 
 
 ## About

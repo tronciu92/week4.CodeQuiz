@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+*, *::before, *::after  {
+    box-sizing: border-box;
+}
+
+:root {
+    --hue-neutral: 180;
+    --hue-wrong: 0;
+    --hue-correct: 120;
+}
+
+body {
+    --hue: var(--hue-neutral);
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 40vw;
+    background-color: hsl(var(--hue), 100%, 20%);
+    font-family: 'Nova Square', cursive;
+}
+
+body.correct {
+    --hue: var(--hue-correct);
+    width: 100vw;
+    height: 40vw;
+}
+
+body.wrong {
+    --hue: var(--hue-wrong);
+    width: 100vw;
+    height: 40vw;
+}
+
+.header {
+    text-align: center;
+}
+.score {
+    font-size: 80px;
+    color: blanchedalmond;
+}
+.restartbtn {
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+.container {
+    width: 800px;
+    max-width: 80%;
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding: 10px;
+    margin: auto;
+    box-shadow: 0 0 10px 2px;
+    align-items: center;
+}
+
+
+.btn-grid {
+    display: grid; grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn {
+    --hue: var(--hue-neutral);
+    border: 1.5px solid hsl(var(--hue), 100%, 30%);
+    background-color: hsl(var(--hue), 100%, 50%);
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: rgb(63, 47, 47);
+    outline: none;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: 'Nova Square', cursive;
+    text-align: center;
+}
+
+.btn:hover {
+    border:1.5px solid black;
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(8, 114, 244, 0.6);
+    transition: transform 150ms;
+    transform: scale(1.03);
+}
+
+.btn.correct {
+    --hue: var(--hue-correct);
+}
+
+.btn.wrong {
+    --hue: var(--hue-wrong);
+}
+
+.start-btn, .next-btn {
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.user {
+    font-size: 30px;
+    color: whitesmoke;
+    float: left;
+}
+
+.timer{
+    font-size: 30px;
+    color: whitesmoke;
+    float: right;
+}
+.text-high-score {
+    color: whitesmoke;
+}
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
